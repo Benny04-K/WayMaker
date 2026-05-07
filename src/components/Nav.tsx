@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import logo from '../Images/logo.png'
 interface NavProps {
   currentPage: 'home' | 'works';
   onNavigate: (page: 'home' | 'works') => void;
@@ -25,9 +25,21 @@ export default function Nav({ currentPage, onNavigate, scrollTo }: NavProps) {
         <button
           className="logo"
           onClick={() => onNavigate('home')}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'baseline', gap: 0 }}
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            padding: 0,
+          }}
         >
-          WayMaker<span>&nbsp;Technologies</span><span className="tm">™</span>
+          <img
+            src={logo}
+            alt="WayMaker Technologies"
+            style={{ height: '100px', width: 'auto', display: 'block' }}
+          />
         </button>
 
         <ul className="nav-links">
